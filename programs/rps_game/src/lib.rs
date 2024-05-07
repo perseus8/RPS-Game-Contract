@@ -7,7 +7,7 @@ mod constants;
 use anchor_lang::prelude::*;
 use instructions::*;
 
-declare_id!("AmCjT1vNrSRfSXtSkXYzkVpyqA1oTfr5jXiXk9JjMiV3");
+declare_id!("4S5kqHKSoJEPMutUhUhzcKzC3k7tFsyVnUUMHtyPXxzq");
 
 #[program]
 pub mod rps_game {

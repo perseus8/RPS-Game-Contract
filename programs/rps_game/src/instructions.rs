@@ -242,7 +242,7 @@ pub fn claim(ctx: Context<Claim>, round_index: u32, is_creator: bool) -> Result<
         &system_instruction::transfer(&accts.vault.key(), &accts.owner.key(), fee_amount),
         &[
             accts.vault.to_account_info().clone(),
-            accts.user.to_account_info().clone(),
+            accts.owner.to_account_info().clone(),
             accts.system_program.to_account_info().clone(),
         ],
         &[&[VAULT_SEED, &[bump]]],
@@ -281,7 +281,7 @@ pub struct Initialize<'info> {
         payer = owner,
         seeds = [GLOBAL_STATE_SEED],
         bump,
-        space = 8 + size_of::<GlobalState>()
+        space = 9600
     )]
     pub global_state: Account<'info, GlobalState>,
 
@@ -303,6 +303,7 @@ pub struct Create<'info> {
     pub user: Signer<'info>,
     
     #[account(
+        mut,
         seeds = [GLOBAL_STATE_SEED],
         bump,
     )]
@@ -334,6 +335,7 @@ pub struct Join<'info> {
     pub user: Signer<'info>,
     
     #[account(
+        mut,
         seeds = [GLOBAL_STATE_SEED],
         bump,
     )]

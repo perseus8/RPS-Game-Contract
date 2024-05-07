@@ -5,7 +5,7 @@ seeds = false
 skip-lint = false
 
 [programs.devnet]
-rps_game = "AmCjT1vNrSRfSXtSkXYzkVpyqA1oTfr5jXiXk9JjMiV3"
+rps_game = "4S5kqHKSoJEPMutUhUhzcKzC3k7tFsyVnUUMHtyPXxzq"
 
 [registry]
 url = "https://api.apr.dev"
